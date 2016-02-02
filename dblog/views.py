@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from dblog.models import Article
 
 def index(request):
  latest_blog_list = Article.objects.all().order_by('-post_date')[:3]
