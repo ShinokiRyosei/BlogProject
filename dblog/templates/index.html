@@ -15,11 +15,8 @@
     </div>
      <p>以下、Form </p>
     <div>
-     <form action="/post/" method="post">
-      <label for="post_artivle">投稿内容: </label>
-      <input id="post_article" type="text" name="{{ form }}">
+     {{ form.as_p }}
       <input type="submit" value="OK">
-     </form>
     </div>
 
     <div id="content">

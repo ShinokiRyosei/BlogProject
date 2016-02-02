@@ -1,7 +1,7 @@
-from django.forms import ModelForm
+from django import forms
 from dblog.models import Article
-class ArticleForm(ModelForm):
+class ArticleForm(forms.ModelForm):
  #post_article = forms.CharField(wiget=forms.Textarea)
  class Meta:
-  model = Book
-  fields = ('name', 'content')
+  model = Article
+  fields = ['name', 'content']
