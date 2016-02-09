@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+{% if latest_question_list %}
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css" />
-  <!--  <title>{% block title %}My amazing site{% endblock %}</title> -->
+
 </head>
 
 <body>
@@ -14,13 +14,17 @@
         {% endblock %}
     </div>
      <p>以下、Form </p>
-    <div>
-     {{ form.as_p }}
-      <input type="submit" value="OK">
-    </div>
-
+    <form action="/post-article" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+    </form>
     <div id="content">
-       <!-- {% block content %}{% endblock %} -->
+       <ul>
+           {% for article in latest_article_list %}
+           {% endfor %}
+       </ul>
     </div>
 </body>
 </html>
+{% endif %}
