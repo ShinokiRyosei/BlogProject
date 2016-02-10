@@ -6,6 +6,7 @@ class Article(models.Model):
     article = models.TextField()
     post_date = models.DateTimeField('date posted')
     title = models.CharField(max_length=128)
+    user = models.OneToOneField(User)
 
     def _str_(self):
         return self.article

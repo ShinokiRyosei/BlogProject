@@ -15,11 +15,12 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.views.generic import TemplateView
-from dblog.views import HomeView
+from dblog.views import HomeView, LoginView, SignupView
 from dblog import views
  
-urlpatterns = [
+urlpatterns = {
     url(r'^admin/', include(admin.site.urls)),
     url(r'', HomeView.as_view(), name='index'),
-    url(r'^')
-]
+    url(r'^login/', LoginView.as_view(), name='login.html'),
+    url(r'^signup/', SignupView.as_view(), name='signup.html'),
+}

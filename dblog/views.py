@@ -11,6 +11,14 @@ class HomeView(TemplateView):
   context_object_name = 'latest_article_list'
 
 
+class LoginView(TemplateView):
+    template_name = 'login.html'
+
+
+class SignupView(TemplateView):
+    template_name = 'signup.html'
+
+
 def index(request):
     latest_article_list = Article.objects.order_by('-post_date')[:5]
     template = loader.get_template('templates/index.html')
